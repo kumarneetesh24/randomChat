@@ -33,8 +33,9 @@ $(function(){
 		leftImage = $("#leftImage"),
 		noMessagesImage = $("#noMessagesImage");
 
+
 	socket.on('connect', function(){
-		
+		console.log(moment());
 		socket.emit('load', id);
 	});
 	socket.on('img', function(data){
@@ -286,6 +287,7 @@ $(function(){
 		else if(status === "chatStarted"){
 
 			section.children().css('display','none');
+			chatScreen.css('display','block');
 		}
 
 		else if(status === "somebodyLeft"){
